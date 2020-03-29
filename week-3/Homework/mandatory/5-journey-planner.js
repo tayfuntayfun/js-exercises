@@ -1,14 +1,15 @@
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
   An array with London locations have been provided.
-
   Return an array of where I can go if I only want to use a specific mode of transport.
-
   NOTE: only the names should be returned, not the means of transport.
 */
 
-function journeyPlanner() {
+function journeyPlanner(londonLocations, transport) {
+  
+  locationTo = londonLocations.filter(x => x.includes(transport)).map( x => x[0])
 
+   return locationTo;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
@@ -53,13 +54,4 @@ test("journeyPlanner function works - case 1",
 test("journeyPlanner function works - case 2",
   arraysEqual(
     journeyPlanner(londonLocations, "bus"),
-    ["Angel", "Tower Bridge", "Greenwich"]
-  )
-)
 
-test("journeyPlanner function works - case 3",
-  arraysEqual(
-    journeyPlanner(londonLocations, "tube"),
-    ["Angel", "London Bridge", "Tower Bridge"]
-  )
-)
